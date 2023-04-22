@@ -1,2 +1,2 @@
 # CourseSprout
-A Simple SMFL app for college students to help find classes
+A Simple application for helping community college students find the right classes

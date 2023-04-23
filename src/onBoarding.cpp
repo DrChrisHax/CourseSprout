@@ -33,7 +33,28 @@ bool onBoarding(const std::string& email) {
     currentStudentText.setFillColor(text);
     currentStudentText.setPosition(currentStudent.getPosition().x + 82, currentStudent.getPosition().y + 70);
 
-    //Phase Search Bar & instructions Page 2
+    //Phase 2
+    sf::RectangleShape searchColleges(sf::Vector2f(300, 30));
+    searchColleges.setFillColor(background);
+    searchColleges.setOutlineColor(text);
+    searchColleges.setPosition(30, 100);
+
+    sf::Text searchCollegesText;
+    searchCollegesText.setFont(font);
+    searchCollegesText.setFillColor(text);
+    searchCollegesText.setString("Your Current College:");
+    searchCollegesText.setCharacterSize(20);
+    searchCollegesText.setPosition(30, 100);
+
+    sf::Text searchCollegesInput("", font, 16);
+    searchCollegesInput.setFillColor(text);
+    searchCollegesInput.setPosition(35, 105);
+
+    sf::Text searchCollegesPlaceholder("Search...", font, 16);
+    searchCollegesPlaceholder.setFillColor(text);
+    searchCollegesPlaceholder.setPosition(35, 105);
+
+    std::string college = "";
 
     //Phase Check boxes for page 3
 
@@ -60,7 +81,17 @@ bool onBoarding(const std::string& email) {
                         }
                     }
                     break;
-                case(2): //Major Selection
+                case(2): //Current College Selection
+                    if(event.type == sf::Event::TextEntered) {
+                        if(event.text.unicode == 8) { //BackSpace
+                            if(!college.empty()) {
+                                college.pop_back();
+                            }
+                            else {
+                                college += static_cast<char>(event.text.unicode);
+                            }
+                        }
+                    }
                     break;
 
                 default:
@@ -79,6 +110,17 @@ bool onBoarding(const std::string& email) {
                 onBoardingPage.draw(currentStudent);
                 onBoardingPage.draw(currentStudentText);
                 break;
+            case(2):
+                onBoardingPage.draw(searchColleges);
+                searchCollegesInput.setString(college);
+                if(college.empty()) {
+                    onBoardingPage.draw(searchCollegesPlaceholder);
+                }
+                else {
+                    onBoardingPage.draw(searchCollegesInput);
+                }
+
+            
             default:
                 break;
         }

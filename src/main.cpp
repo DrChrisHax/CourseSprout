@@ -6,7 +6,7 @@ int main() {
 
     std::string email = "";
 
-    //if(createAccount(email)) return 1;
+    if(createAccount(email)) return 1;
     if(onBoarding(email)) return 1;
     //login();
 
@@ -17,7 +17,7 @@ int main() {
 }
 
 bool writeUserInfo(const std::string& input, const std::string& fileName) {
-    std::ofstream outfile(fileName); 
+    std::ofstream outfile("UserInfo/" + fileName, std::ios_base::app); 
 
     if(!outfile) {
         std::cout << "Error opening output file!" << std::endl;

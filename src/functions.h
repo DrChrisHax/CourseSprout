@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <SFML/System.hpp>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -13,6 +14,7 @@
 bool createAccount(std::string&);
 bool createAccountButtonClick(const std::string&, const std::string&, const std::string&, std::string&);
 bool onBoarding(const std::string&);
+bool phase4ButtonClick();
 bool writeUserInfo(const std::string&, const std::string&);
 
 

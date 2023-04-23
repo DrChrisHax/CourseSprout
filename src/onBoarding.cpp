@@ -115,6 +115,7 @@ bool onBoarding(const std::string& email) {
     const int checkboxSize = 20;
     const int checkboxSpacing = 30;
     sf::RectangleShape checkboxes[9];
+    bool checked[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
     for(int i = 0; i < 9; i++) {
         checkboxes[i].setSize(sf::Vector2f(checkboxSize, checkboxSize));
         checkboxes[i].setPosition(sf::Vector2f(20, 20 + (checkboxSize + checkboxSpacing) * i));
@@ -128,8 +129,24 @@ bool onBoarding(const std::string& email) {
         optionText[i].setString(UCOptions[i]);
         optionText[i].setCharacterSize(20);
         optionText[i].setFillColor(text);
-        optionText[i].setPosition(sf::Vector2f(5 + checkboxSize + checkboxSpacing * 2, 20 + (checkboxSize + checkboxSpacing) * i));
+        optionText[i].setPosition(sf::Vector2f(checkboxSize + checkboxSpacing * 2, 20 + (checkboxSize + checkboxSpacing) * i));
     }
+    sf::RectangleShape UCButton(sf::Vector2f(300, 30));
+    UCButton.setFillColor(nextButton);
+    UCButton.setOutlineColor(nextText);
+    UCButton.setOutlineThickness(1);
+    UCButton.setPosition(30, (checkboxSize + checkboxSpacing) * 10);
+
+    sf::Text UCButtonText;
+    UCButtonText.setFont(font);
+    UCButtonText.setString("Next Page");
+    UCButtonText.setCharacterSize(20);
+    UCButtonText.setFillColor(nextText);
+    UCButtonText.setPosition(130, (checkboxSize + checkboxSpacing) * 10);
+
+    
+    int UCCount = 0;
+    bool lockClick = false;
 
 
     while(onBoardingPage.isOpen()) {
@@ -207,25 +224,57 @@ bool onBoarding(const std::string& email) {
                         
                     }
                 case(4):
-                    if(event.mouseButton.button == sf::Mouse::Left) {
-                        for(int i = 0; i < 9; i++) {
-                            if(checkboxes[i].getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
-                                if(checkboxes[i].getFillColor() == background) {
-                                    checkboxes[i].setFillColor(nextButton);
+                    for(int i = 0; i < 9; i++) {
+                        UCCount += checked[i]; 
+                    }
+
+                    
+                
+                    if(event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+                        sf::Vector2f mousePos = sf::Vector2f(event.mouseButton.x, event.mouseButton.y); //ENTER BUTTON
+                        if(UCButton.getGlobalBounds().contains(mousePos) && UCCount > 0){
+                            std::string schoolsSelected = "";
+                            for(int i = 0; i < 9; i++) {
+                                if(checkboxes[i].getFillColor() == nextButton) {
+                                    schoolsSelected = schoolsSelected + " " + UCOptions[i];
                                 }
-                                else {
-                                    checkboxes[i].setFillColor(background);
+                            }
+                            writeUserInfo(schoolsSelected, email + ".txt");
+                            phase = 5;
+                        }
+                        else {
+                            for(int i = 0; i < 9; i++) {
+                                if(checkboxes[i].getGlobalBounds().contains(mousePos) && !lockClick) { //CHECKBOX CLICKED
+                                    checked[i] = !checked[i];
+                                    checkboxes[i].setFillColor(checked[i] ? nextButton : background);
+                                    lockClick = true;
                                 }
                             }
                         }
+                    }                    
+                    else if(event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left) {
+                        lockClick = false; 
+                    }
+                    else if(event.type == sf::Event::TextEntered) {
+                        if((event.text.unicode == 10 || event.text.unicode == 13) && UCCount > 0) { //Enter / Return)
+                            std::string schoolsSelected = "";
+                            for(int i = 0; i < 9; i++) {
+                                if(checkboxes[i].getFillColor() == nextButton) {
+                                    schoolsSelected = schoolsSelected + " " + UCOptions[i];
+                                }
+                            }
+                            writeUserInfo(schoolsSelected, email + ".txt");
+                            phase = 5;
+                        }
+
                     }
                     break;
-
+                case(5): //TODO Add classes
+                onBoardingPage.close();
+                return 0;
                 default:
                     break;
-
             }
-                
         }
 
         onBoardingPage.clear(background);
@@ -270,7 +319,10 @@ bool onBoarding(const std::string& email) {
                     onBoardingPage.draw(checkboxes[i]);
                     onBoardingPage.draw(optionText[i]);
                 }
+                onBoardingPage.draw(UCButton);
+                onBoardingPage.draw(UCButtonText);
                 break;
+            
             
 
             

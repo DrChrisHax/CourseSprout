@@ -1,9 +1,9 @@
 #include "functions.h"
 #include "sha256.h"
 
-bool createAccount(std::string& userEmail) {
+bool createAccount(sf::RenderWindow& createAccountPage, std::string& userEmail) {
 
-    sf::RenderWindow createAccountPage(sf::VideoMode(360, 800), "Create Account", sf::Style::Titlebar | sf::Style::Close);
+    //sf::RenderWindow createAccountPage(sf::VideoMode(360, 800), "Create Account", sf::Style::Titlebar | sf::Style::Close);
 
     sf::Font font;
     if(!font.loadFromFile("fonts/mulish/Mulish-Regular.ttf")) {
@@ -102,7 +102,7 @@ bool createAccount(std::string& userEmail) {
     createAccountButtonText.setString("Create Account");
     createAccountButtonText.setCharacterSize(20);
     createAccountButtonText.setFillColor(nextText);
-    createAccountButtonText.setPosition(65, 275);
+    createAccountButtonText.setPosition(80, 270);
 
 
     bool emailSelected = false;
@@ -128,7 +128,6 @@ bool createAccount(std::string& userEmail) {
                     sf::Vector2f mousePos = sf::Vector2f(event.mouseButton.x, event.mouseButton.y);
 
                     if(createAccountButton.getGlobalBounds().contains(mousePos)){
-                        createAccountPage.close();
                         return createAccountButtonClick(email, password, reenterPassword, userEmail);
                     }
                     else if(emailBox.getGlobalBounds().contains(mousePos)) {
@@ -175,7 +174,6 @@ bool createAccount(std::string& userEmail) {
                     reenterPasswordSelected = false;
                 }
                 else if(event.text.unicode == 10 || event.text.unicode == 13) { //Enter / return
-                    createAccountPage.close();
                     return createAccountButtonClick(email, password, reenterPassword, userEmail);
                 }
                 else if(emailSelected) { //Email text box

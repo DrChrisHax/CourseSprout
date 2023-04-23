@@ -1,8 +1,8 @@
 #include "functions.h"
 
-bool onBoarding(const std::string& email) {
+bool onBoarding(sf::RenderWindow& onBoardingPage, const std::string& email) {
     
-    sf::RenderWindow onBoardingPage(sf::VideoMode(360, 800), "On Boarding", sf::Style::Titlebar | sf::Style::Close);
+    //sf::RenderWindow onBoardingPage(sf::VideoMode(360, 800), "On Boarding", sf::Style::Titlebar | sf::Style::Close);
 
     sf::Font font;
     if(!font.loadFromFile("fonts/mulish/Mulish-Regular.ttf")) {
@@ -270,8 +270,7 @@ bool onBoarding(const std::string& email) {
                     }
                     break;
                 case(5): //TODO Add classes
-                onBoardingPage.close();
-                return 0;
+                    return 0;
                 default:
                     break;
             }

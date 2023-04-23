@@ -11,10 +11,10 @@
 #include <algorithm>
 
 //1 for fail, 0 for success
-bool createAccount(std::string&);
+bool logoFade(sf::RenderWindow&);
+bool createAccount(sf::RenderWindow&, std::string&);
 bool createAccountButtonClick(const std::string&, const std::string&, const std::string&, std::string&);
-bool onBoarding(const std::string&);
-bool phase4ButtonClick();
+bool onBoarding(sf::RenderWindow&, const std::string&);
 bool writeUserInfo(const std::string&, const std::string&);
 
 

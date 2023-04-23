@@ -4,16 +4,21 @@
 
 int main() {
 
+    sf::RenderWindow window(sf::VideoMode(360, 800), "CourseSprout", sf::Style::Titlebar | sf::Style::Close);
+
+    if(logoFade(window)) return 1;
+
     std::string email = "test@test.com";
 
-    //if(createAccount(email)) return 1;
-    if(onBoarding(email)) return 1;
+    if(createAccount(window, email)) return 1;
+    if(onBoarding(window, email)) return 1;
+    
     //login();
 
     return 0;
-    
+    /*std::cout << "Hello Course Sprout!" << std::endl;
 
-
+ */
 }
 
 bool writeUserInfo(const std::string& input, const std::string& fileName) {

@@ -2,8 +2,8 @@
 #include "sha256.h"
 
 
-bool login() {
-    sf::RenderWindow loginPage(sf::VideoMode(360, 800), "Login");
+bool login(sf::RenderWindow& loginPage) {
+    //sf::RenderWindow loginPage(sf::VideoMode(360, 800), "Login");
 
     sf::Font font;
     if(!font.loadFromFile("fonts/arial.ttf")) {

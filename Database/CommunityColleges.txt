@@ -113,3 +113,31 @@ west los angeles college
 west valley college
 woodland community college
 yuba college
+
+uc berkeley
+uc davis
+uc irvine
+uc merced
+uc riverside
+uc san diego
+uc santa barbara
+uc santa cruz
+
+csu bakersfield
+csu channel islands
+chino state
+csu dominguez hills
+csu east bay
+fresno state
+csu fullerton
+cal poly humboldt
+csu long beach
+cal state la
+cal maritime
+csu monterey bay
+csun
+cal poly pomona
+sacramento state
+csu san bernardino
+san diego state
+san francisco state

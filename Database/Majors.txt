@@ -1,110 +1,110 @@
-Accounting
-Advanced Baking and Pastry
-Advanced Culinary Arts
-Airframe and Powerplant
-Airframe
-Animation
-Anthropology
-Apparel Construction
-Apparel Productions and Product Development
-Applied Ocean Science and Technology
-Architectural Design 1
-Architectural Design 2
-Architecture
-Art History
-Astronomy
-Aviation Science
-Biology
-Business Administration
-Business Employee
-CCMA Eligible Program
-Chemistry
-Child Development Associate Teacher
-Child Development Lead Teacher
-CNC Machine Operator
-CNC Machine Programmer
-Communications Studies
-Computer Information Systems
-Computer Science
-Construction Technology
-Dance
-Dental Assisting - Registered
-Diagnostic Medical Sonography
-Display and Visual Presentation
-Early Childhood Education
-Earth Science
-Echocardiography and Vascular Ultrasound
-Economics
-Elementary Teacher Education
-Embedded Systems
-Engineering
-English
-Environmental Science
-Fashion Design
-Fashion Merchandising
-Film & Television
-Film, Television and Electronic Media
-Fitness Specialist: Health Fitness Instructor/Personal Trainer
-Flight Attendant and Airline and Travel Careers
-Food and Beverage Management
-Foreign Languages
-General Marketing
-Geography
-Geology
-Global Studies
-Graphic Design
-Heating, Ventilation, Air Conditioning, and Refrigeration
-History
-Horticulture
-Hotel Management
-Human Resource Management
-Industrial PLC Technician
-Integrative Health Coach
-International Business
-Journalism
-Kinesiology
-Level 2 - Interior Design Assistant
-Level 2 Culinology - Professional Level
-Liberal Arts
-Machinist
-Management and Leadership Studies
-Marine Sciences
-Mass Communications/Media Studies
-Master Construction Specialist
-Mathematics
-Meeting and Event Management
-MIDI Applications
-Music
-Narrative Illustration
-Natural Science
-Neurodiagnostic Technology
-Nutrition and Dietetics Technician
-Nutrition Education
-Philosophy
-Photography-Still
-Physics
-Political Science
-Polysomnographic Technology
-Powerplant
-Professional Mariner
-Psychology
-Public Health
-Public Health Science
-Radiologic Technology
-Real Estate-Broker
-Religious Studies
-Residential Construction Development First Award
-Respiratory Care
-Retail
-Sales and Marketing Specialist
-Sociology
-Spa Management
-Spanish
-Speech-Language Pathology Assistant
-Studio Arts
-Theatre Arts
-Tooling
-Travel Specialist
-UX Design
-Welding Technology
-World Dance Instructor
+accounting
+advanced baking and pastry
+advanced culinary arts
+airframe and powerplant
+airframe
+animation
+anthropology
+apparel construction
+apparel productions and product development
+applied ocean science and technology
+architectural design 1
+architectural design 2
+architecture
+art history
+astronomy
+aviation science
+biology
+business administration
+business employee
+ccma eligible program
+chemistry
+child development associate teacher
+child development lead teacher
+cnc machine operator
+cnc machine programmer
+communications studies
+computer information systems
+computer science
+construction technology
+dance
+dental assisting - registered
+diagnostic medical sonography
+display and visual presentation
+early childhood education
+earth science
+echocardiography and vascular ultrasound
+economics
+elementary teacher education
+embedded systems
+engineering
+english
+environmental science
+fashion design
+fashion merchandising
+film & television
+film, television and electronic media
+fitness specialist: health fitness instructor/personal trainer
+flight attendant and airline and travel careers
+food and beverage management
+foreign languages
+general marketing
+geography
+geology
+global studies
+graphic design
+heating, ventilation, air conditioning, and refrigeration
+history
+horticulture
+hotel management
+human resource management
+industrial plc technician
+integrative health coach
+international business
+journalism
+kinesiology
+level 2 - interior design assistant
+level 2 culinology - professional level
+liberal arts
+machinist
+management and leadership studies
+marine sciences
+mass communications/media studies
+master construction specialist
+mathematics
+meeting and event management
+midi applications
+music
+narrative illustration
+natural science
+neurodiagnostic technology
+nutrition and dietetics technician
+nutrition education
+philosophy
+photography-still
+physics
+political science
+polysomnographic technology
+powerplant
+professional mariner
+psychology
+public health
+public health science
+radiologic technology
+real estate-broker
+religious studies
+residential construction development first award
+respiratory care
+retail
+sales and marketing specialist
+sociology
+spa management
+spanish
+speech-language pathology assistant
+studio arts
+theatre arts
+tooling
+travel specialist
+ux design
+welding technology
+world dance instructor

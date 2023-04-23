@@ -1,4 +1,4 @@
-#include "window.h"
+#include "functions.h"
 #include "sha256.h"
 
 bool createAccount() {
@@ -242,7 +242,8 @@ bool createAccountButtonClick(const std::string& email, const std::string& passw
     }
 
     //Do Login
-    std::cout << sha256(const_cast<char*>(password.c_str())) << std::endl; 
+    std::string salt = "salt";
+    writeUserInfo(email + '\n' + sha256(const_cast<char*>((password + salt).c_str())), email + ".txt");
     return 0;
                         
 }

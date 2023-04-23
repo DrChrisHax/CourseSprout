@@ -1,4 +1,4 @@
-#include "window.h"
+#include "functions.h"
 #include "sha256.h"
 
 

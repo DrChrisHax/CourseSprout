@@ -1,4 +1,5 @@
-#Chris Manlove, Ayushmann Puri, Kyle Tran, Jenny April 2023
+#Chris Manlove, Ayushmann Puri, Kyle Tran, Jenny Chen
+#April 2023
 #Makefile for Course Sprout
 
 EXE = main

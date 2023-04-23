@@ -6,24 +6,30 @@ bool createAccount(std::string& userEmail) {
     sf::RenderWindow createAccountPage(sf::VideoMode(360, 800), "Create Account", sf::Style::Titlebar | sf::Style::Close);
 
     sf::Font font;
-    if(!font.loadFromFile("fonts/arial.ttf")) {
+    if(!font.loadFromFile("fonts/mulish/Mulish-Regular.ttf")) {
         createAccountPage.close();
         std::cout << "Error loading font";
         return 1;
     }
+
+    sf::Color background(255, 252, 227);
+    sf::Color button(229, 224, 207);
+    sf::Color text(39, 33, 33);
+    sf::Color nextButton(0, 145, 65);
+    sf::Color nextText(255, 252, 227);
     
     //email TEXT
     sf::Text emailText;
     emailText.setFont(font);
-    emailText.setFillColor(sf::Color::Black);
+    emailText.setFillColor(text);
     emailText.setString("Email:");
     emailText.setCharacterSize(20);
     emailText.setPosition(50, 50);
 
     //email BOX
     sf::RectangleShape emailBox(sf::Vector2f(200, 30));
-    emailBox.setFillColor(sf::Color::White);
-    emailBox.setOutlineColor(sf::Color::Black);
+    emailBox.setFillColor(background);
+    emailBox.setOutlineColor(text);
     emailBox.setOutlineThickness(1);
     emailBox.setPosition(50, 80);
 
@@ -31,7 +37,7 @@ bool createAccount(std::string& userEmail) {
     sf::Text emailInput;
     emailInput.setFont(font);
     emailInput.setCharacterSize(20);
-    emailInput.setFillColor(sf::Color::Black);
+    emailInput.setFillColor(text);
     emailInput.setPosition(55, 85);
 
     std::string email = "";
@@ -39,15 +45,15 @@ bool createAccount(std::string& userEmail) {
     //PASSWORD TEXT
     sf::Text passwordText;
     passwordText.setFont(font);
-    passwordText.setFillColor(sf::Color::Black);
+    passwordText.setFillColor(text);
     passwordText.setString("Password:");
     passwordText.setCharacterSize(20);
     passwordText.setPosition(50, 120);
 
     //PASSWORD BOX
     sf::RectangleShape passwordBox(sf::Vector2f(200, 30));
-    passwordBox.setFillColor(sf::Color::White);
-    passwordBox.setOutlineColor(sf::Color::Black);
+    passwordBox.setFillColor(background);
+    passwordBox.setOutlineColor(text);
     passwordBox.setOutlineThickness(1);
     passwordBox.setPosition(50, 150);
 
@@ -55,7 +61,7 @@ bool createAccount(std::string& userEmail) {
     sf::Text passwordInput;
     passwordInput.setFont(font);
     passwordInput.setCharacterSize(20);
-    passwordInput.setFillColor(sf::Color::Black);
+    passwordInput.setFillColor(text);
     passwordInput.setPosition(55, 155);
 
     std::string password = "";
@@ -63,15 +69,15 @@ bool createAccount(std::string& userEmail) {
     //REENTER PASSWORD TEXT
     sf::Text reenterPasswordText;
     reenterPasswordText.setFont(font);
-    reenterPasswordText.setFillColor(sf::Color::Black);
+    reenterPasswordText.setFillColor(text);
     reenterPasswordText.setString("Re-enter Password:");
     reenterPasswordText.setCharacterSize(20);
     reenterPasswordText.setPosition(50, 190);
 
     //REENTER PASSWORD BOX
     sf::RectangleShape reenterPasswordBox(sf::Vector2f(200, 30));
-    reenterPasswordBox.setFillColor(sf::Color::White);
-    reenterPasswordBox.setOutlineColor(sf::Color::Black);
+    reenterPasswordBox.setFillColor(background);
+    reenterPasswordBox.setOutlineColor(text);
     reenterPasswordBox.setOutlineThickness(1);
     reenterPasswordBox.setPosition(50, 220);
 
@@ -79,15 +85,15 @@ bool createAccount(std::string& userEmail) {
     sf::Text reenterPasswordInput;
     reenterPasswordInput.setFont(font);
     reenterPasswordInput.setCharacterSize(20);
-    reenterPasswordInput.setFillColor(sf::Color::Black);
+    reenterPasswordInput.setFillColor(text);
     reenterPasswordInput.setPosition(55, 225);
 
     std::string reenterPassword = "";
 
     //createAccount BUTTON
     sf::RectangleShape createAccountButton(sf::Vector2f(200, 30));
-    createAccountButton.setFillColor(sf::Color::Blue);
-    createAccountButton.setOutlineColor(sf::Color::Black);
+    createAccountButton.setFillColor(nextButton);
+    createAccountButton.setOutlineColor(nextText);
     createAccountButton.setOutlineThickness(1);
     createAccountButton.setPosition(50, 270);
 
@@ -95,7 +101,7 @@ bool createAccount(std::string& userEmail) {
     createAccountButtonText.setFont(font);
     createAccountButtonText.setString("Create Account");
     createAccountButtonText.setCharacterSize(20);
-    createAccountButtonText.setFillColor(sf::Color::White);
+    createAccountButtonText.setFillColor(nextText);
     createAccountButtonText.setPosition(65, 275);
 
 
@@ -204,7 +210,7 @@ bool createAccount(std::string& userEmail) {
 
         
         //UPDATE SCREEN
-        createAccountPage.clear(sf::Color::White);
+        createAccountPage.clear(background);
   
         createAccountPage.draw(emailText);
         createAccountPage.draw(emailBox);

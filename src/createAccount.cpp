@@ -1,7 +1,7 @@
 #include "functions.h"
 #include "sha256.h"
 
-bool createAccount() {
+bool createAccount(std::string& userEmail) {
 
     sf::RenderWindow createAccountPage(sf::VideoMode(360, 800), "Create Account", sf::Style::Titlebar | sf::Style::Close);
 
@@ -123,7 +123,7 @@ bool createAccount() {
 
                     if(createAccountButton.getGlobalBounds().contains(mousePos)){
                         createAccountPage.close();
-                        return createAccountButtonClick(email, password, reenterPassword);
+                        return createAccountButtonClick(email, password, reenterPassword, userEmail);
                     }
                     else if(emailBox.getGlobalBounds().contains(mousePos)) {
                         emailSelected = true;
@@ -170,7 +170,7 @@ bool createAccount() {
                 }
                 else if(event.text.unicode == 10 || event.text.unicode == 13) { //Enter / return
                     createAccountPage.close();
-                    return createAccountButtonClick(email, password, reenterPassword);
+                    return createAccountButtonClick(email, password, reenterPassword, userEmail);
                 }
                 else if(emailSelected) { //Email text box
                     if(event.text.unicode == 8 && !emailInput.getString().isEmpty()) {
@@ -224,7 +224,7 @@ bool createAccount() {
     return 0;
 }
 
-bool createAccountButtonClick(const std::string& email, const std::string& password, const std::string& reenterPassword) {
+bool createAccountButtonClick(const std::string& email, const std::string& password, const std::string& reenterPassword, std::string& userEmail) {
     //Email Valid
     int count = 0, size = email.size();
     for(int i = 0; i < size; i++) {
@@ -242,6 +242,7 @@ bool createAccountButtonClick(const std::string& email, const std::string& passw
     }
 
     //Do Login
+    userEmail = email;
     std::string salt = "salt";
     writeUserInfo(email + '\n' + sha256(const_cast<char*>((password + salt).c_str())), email + ".txt");
     return 0;

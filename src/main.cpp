@@ -4,8 +4,10 @@
 
 int main() {
 
-    if(createAccount()) return 1;
-    if(onBoarding()) return 1;
+    std::string email = "";
+
+    if(createAccount(email)) return 1;
+    if(onBoarding(email)) return 1;
     //login();
 
     return 0;

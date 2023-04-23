@@ -6,6 +6,8 @@ Students attending community colleges or students planning to transfer in genera
 
 Technologies used: C++ (with SFML), Figma, Zeplin, Canva
 
+Made for the LAHacks Home Room Track
+
 Link to our designs: https://www.figma.com/file/IBuLeBNpbwnaW5WVowcPAS/Untitled?node-id=46%3A277&t=3U8k5I9VULd0DuUU-1
 
 Link to our presentation slides: https://www.canva.com/design/DAFg7IiXp5M/JL8MeWGXp_38oMOgF2dpUQ/edit?utm_content=DAFg7IiXp5M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton

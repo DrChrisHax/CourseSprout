@@ -12,5 +12,6 @@ $(EXE): $(OBJ) makefile
 				$(CXX) src/*.cpp $(CXXFLAGS) $(LINKERFLAGS) -o $(EXE)
 clean:
 				@rm -f $(EXE)
+				@rm -f UserInfo/*.txt
 run: $(EXE)
 				@./$(EXE)

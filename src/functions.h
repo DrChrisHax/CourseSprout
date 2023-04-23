@@ -5,6 +5,9 @@
 #include <SFML/Window.hpp>
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
 
 //1 for fail, 0 for success
 bool createAccount(std::string&);

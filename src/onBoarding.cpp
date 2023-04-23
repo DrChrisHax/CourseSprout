@@ -36,6 +36,7 @@ bool onBoarding(const std::string& email) {
     //Phase 2
     sf::RectangleShape searchColleges(sf::Vector2f(300, 30));
     searchColleges.setFillColor(background);
+    searchColleges.setOutlineThickness(2);
     searchColleges.setOutlineColor(text);
     searchColleges.setPosition(30, 100);
 
@@ -44,7 +45,7 @@ bool onBoarding(const std::string& email) {
     searchCollegesText.setFillColor(text);
     searchCollegesText.setString("Your Current College:");
     searchCollegesText.setCharacterSize(20);
-    searchCollegesText.setPosition(30, 100);
+    searchCollegesText.setPosition(30, 70);
 
     sf::Text searchCollegesInput("", font, 16);
     searchCollegesInput.setFillColor(text);
@@ -54,7 +55,17 @@ bool onBoarding(const std::string& email) {
     searchCollegesPlaceholder.setFillColor(text);
     searchCollegesPlaceholder.setPosition(35, 105);
 
+
     std::string college = "";
+    std::vector<std::string> results;
+
+    std::vector<std::string> collegeList;
+    std::ifstream infile("Database/CommunityColleges.txt");
+    std::string line;
+    while(std::getline(infile, line)) {
+        collegeList.push_back(line);
+    }
+    infile.close();
 
     //Phase Check boxes for page 3
 
@@ -83,14 +94,28 @@ bool onBoarding(const std::string& email) {
                     break;
                 case(2): //Current College Selection
                     if(event.type == sf::Event::TextEntered) {
-                        if(event.text.unicode == 8) { //BackSpace
-                            if(!college.empty()) {
-                                college.pop_back();
-                            }
-                            else {
-                                college += static_cast<char>(event.text.unicode);
+                        if(event.text.unicode == 8 && college.size() > 0) { //BackSpace
+                            college.pop_back();
+                        }
+                        else if(event.text.unicode == 10 || event.text.unicode == 13) { //Enter / Return
+                            if(!(results[0] == "")){
+                                writeUserInfo(results[0], email + ".txt");
+                                phase = 3;
                             }
                         }
+                        else {
+                            college += std::tolower(static_cast<char>(event.text.unicode));
+                        }
+                        results.clear();
+                        for(const auto& line : collegeList) {
+                            if(line.find(college) != std::string::npos) {
+                                results.push_back(line);
+                                if(results.size() == 5) {
+                                    break;
+                                }
+                            }
+                        }
+                        
                     }
                     break;
 
@@ -112,7 +137,11 @@ bool onBoarding(const std::string& email) {
                 break;
             case(2):
                 onBoardingPage.draw(searchColleges);
-                searchCollegesInput.setString(college);
+                onBoardingPage.draw(searchCollegesText);
+                searchCollegesInput.setString(college + '\n');
+                for(size_t i = 0; i < results.size(); i++) {
+                    searchCollegesInput.setString(searchCollegesInput.getString() + '\n' + results[i]);
+                }
                 if(college.empty()) {
                     onBoardingPage.draw(searchCollegesPlaceholder);
                 }

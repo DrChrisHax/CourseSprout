@@ -4,9 +4,9 @@
 
 int main() {
 
-    std::string email = "";
+    std::string email = "test@test.com";
 
-    if(createAccount(email)) return 1;
+    //if(createAccount(email)) return 1;
     if(onBoarding(email)) return 1;
     //login();
 

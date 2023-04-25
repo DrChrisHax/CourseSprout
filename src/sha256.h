@@ -1,3 +1,11 @@
+/*
+    Manlove, Chris
+
+    April 23, 2023
+
+    LAHacks
+*/
+
 #ifndef SHA256_H
 #define SHA256_H
 #include <string>

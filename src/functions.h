@@ -1,3 +1,11 @@
+/*
+    Manlove, Chris
+
+    April 23, 2023
+
+    LAHacks
+*/
+
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 

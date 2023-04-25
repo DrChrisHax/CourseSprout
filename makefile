@@ -13,5 +13,7 @@ $(EXE): $(OBJ) makefile
 clean:
 				@rm -f $(EXE)
 				@rm -f UserInfo/*.txt
+rt:
+				@rm -f UserInfo/*.txt
 run: $(EXE)
 				@./$(EXE)

@@ -1,3 +1,11 @@
+/*
+    Manlove, Chris
+
+    April 23, 2023
+
+    LAHacks
+*/
+
 #include "functions.h"
 #include "sha256.h"
 
@@ -16,9 +24,6 @@ int main() {
     //login();
 
     return 0;
-    /*std::cout << "Hello Course Sprout!" << std::endl;
-
- */
 }
 
 bool writeUserInfo(const std::string& input, const std::string& fileName) {

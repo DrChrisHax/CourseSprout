@@ -1,3 +1,11 @@
+/*
+    Manlove, Chris
+
+    April 23, 2023
+
+    LAHacks
+*/
+
 #include "functions.h"
 #include "sha256.h"
 
@@ -237,12 +245,12 @@ bool createAccountButtonClick(const std::string& email, const std::string& passw
     if((count < 1 || count > 1) && !(size > 4)){
         //Invalid Email
         std::cout << "Invalid Email" << std::endl;
-        return 1;
+        return 0;
     }
     if(password != reenterPassword){
         //Invalid Password
         std::cout << "Invalid Password" << std::endl;
-        return 1;
+        return 0;
     }
 
     //Do Login

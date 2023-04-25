@@ -1,3 +1,11 @@
+/*
+    Manlove, Chris
+
+    April 23, 2023
+
+    LAHacks
+*/
+
 #include "functions.h"
 
 bool logoFade(sf::RenderWindow& window) {

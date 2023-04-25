@@ -1,4 +1,11 @@
 #include "functions.h"
+/*
+    Manlove, Chris
+
+    April 23, 2023
+
+    LAHacks
+*/
 
 bool onBoarding(sf::RenderWindow& onBoardingPage, const std::string& email) {
     

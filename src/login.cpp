@@ -1,4 +1,16 @@
-#include "functions.h"
+/*
+    Manlove, Chris
+
+    April 23, 2023
+
+    LAHacks
+*/
+
+//TODO
+//Check for account
+//Saved for later use
+
+/*#include "functions.h"
 #include "sha256.h"
 
 
@@ -163,3 +175,4 @@ bool login(sf::RenderWindow& loginPage) {
 
     return 0;
 }
+*/
